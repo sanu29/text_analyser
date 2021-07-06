@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="public/css/style.css" >
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital@1&display=swap');
+     </style>
+    <title>HomePage</title>
+</head>
+<body>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      
+      <div class="text-title">
+          TextAnalyser
+      </div>
+      <div class="d-flex">
+        
+          <ul class="navbar-nav ">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+               
+                </li>
+               
+          </ul>
+      </div>
+    
+    </nav>
+
+    <form action="/" method="POST">
+
+    <div class="wrapper">
+        <div class="main-area">
+            <div class="title-bar">@Text</div>
+            <div class="tool-bar">
+                <ul class="style">
+                    <li><select class="form-select select" aria-label="Default select example">
+                        <option selected>Font Type</option>
+                        <option value="1" style="font-family: Arial;">Arial</option>
+                        <option value="2" style="font-family: Calibri;">Calibri</option>
+                        <option value="3" style="font-family: Times new Roman;">Times new Roman</option>
+                        <option value="4" style="font-family: Comic Sans MS;">Comic Sans MS</option>
+                        <option value="5" style="font-family: Impact;">Impact</option>
+                      </select>
+                    </li>
+                    <li><select class="form-select selectsize" aria-label="Default select example">
+                        <option selected> Size</option>
+                        <option value="10">10</option>
+                        <option value="12">12</option>
+                        <option value="14">14</option>
+                        <option value="16">16</option>
+                        <option value="18">18</option>
+                        <option value="20">20</option>
+                      </select>
+                    </li>
+                    <li class="btn-bold bold"><bold> B </bold></li>
+                    
+                    <li class="btn-bold italic"><i> I </i></li>
+                </ul>
+            </div>
+            <textarea class="textarea" name="document" placeholder="Type something here.........."></textarea>
+        </div></div>
+    <br>
+    <center>
+    <div class="btn-group">
+  
+        <input type="radio" class="btn-check" name="options" id="option1" value=1  autocomplete="off" checked/>
+        <label class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Data analysis is the process of cleaning, analyzing, interpreting, and visualizing data using various techniques and business intelligence tools. Data analysis tools help you discover relevant insights that lead to smarter and more effective decision-making." for="option1">All</label>
+      
+        <input type="radio" class="btn-check" name="options" value=2 id="option2" autocomplete="off" />
+        <label class="btn btn-secondary" for="option2">Count</label>
+
+        <input type="radio" class="btn-check" name="options" value=3 id="option3" autocomplete="off" />
+        <label class="btn btn-secondary" for="option3">Sentiment</label>
+        
+        <input type="radio" class="btn-check" name="options" value=4 id="option4" autocomplete="off" />
+        <label class="btn btn-secondary" for="option4">Keyword</label>
+        <input type="radio" class="btn-check" name="options" value=5 id="option5" autocomplete="off" />
+        <label class="btn btn-secondary" for="option5">Plagarism</label>
+        <input type="radio" class="btn-check" name="options" value=6 id="option6" autocomplete="off" />
+        <label class="btn btn-secondary pos"  for="option6">POS</label>
+      </div>
+    </div></center>
+        <div class="d-grid gap-2 d-md-block ">
+      <center>  <a class="btn2 btn-primary" id="reset" type="button">Reset</a>
+            <input class="btn2 btn-primary " type="submit"></button> </center>
+          </div>
+    </form>
+
+<!-- Footer -->
+<footer class="page-footer font-small blue">
+
+    <!-- Copyright -->
+    <div class="text-center"><small>SaniyShaikh</small>
+    </div>
+    <!-- Copyright -->
+  
+  </footer>
+  <!-- Footer -->
+</body>
+
+<script>
+
+
+
+$('.select').change(()=>{
+    let a = $('.select').find(":selected").val();
+    console.log(a);
+    if(a==1)
+    {
+     
+        $('.textarea').css({'font-family' : 'Arial'});
+    }
+    else if(a==2)
+    {
+
+     
+        $('.textarea').css({'font-family':'Calibri'});
+    }
+    else if(a==3)
+    {
+            $('.textarea').css({'font-family':'Times New Roman'})
+    }
+    else if(a==4)
+    {
+        $('.textarea').css({'font-family':'Comic Sans MS'})
+    }
+    else if(a==5)
+    {
+        $('.textarea').css({'font-family':'Impact'})
+    }
+})
+
+$(".selectsize").change(()=>{
+    let b = $('.selectsize').val();
+    if(b==10){
+        $('.textarea').css({'font-size':'10px'})
+    }
+    else if(b==12){
+        $('.textarea').css({'font-size':'12px'})
+    }
+    else if(b==14){
+        $('.textarea').css({'font-size':'14px'})
+
+    }
+
+    else if(b==16){
+        $('.textarea').css({'font-size':'16px'})
+    }
+    else if(b==18){
+        $('.textarea').css({'font-size':'18px'})
+    }
+    else if(b==20){
+        $('.textarea').css({'font-size':'20px'})
+    }
+})
+
+$('.bold').click(()=>{
+    $('.bold').toggleClass("btn-bold");
+    $('.bold').toggleClass("active1");
+
+    if($(".bold").hasClass("active1"))
+    {
+        $(".textarea").css({'font-weight':'bold'});
+    }
+    else{
+        $(".textarea").css({'font-weight':'normal'})
+    }
+})
+
+$('.italic').click(()=>{
+    $(".italic").toggleClass("btn-bold");
+    $(".italic").toggleClass("active1");
+
+    if($(".italic").hasClass("active1"))
+    {
+        $(".textarea").css({'font-style':'italic'})
+
+    }
+    else {
+        $(".textarea").css({"font-style":"normal"})
+    }
+})
+
+
+$('#reset').click(()=>{
+    // alert("hie");
+   $(".textarea").val("");
+})
+
+</script>
+
+
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "textanalyser",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "detect-newline": "^3.1.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "keyword-extractor": "0.0.20",
+    "node-pos": "0.0.4",
+    "nodemon": "^2.0.9",
+    "plagiarism": "^1.0.3",
+    "sentiment": "^5.0.2",
+    "text-chart": "^1.0.8",
+    "word-frequency-basic": "^1.0.0",
+    "wordpos": "^2.1.0",
+    "words-frequency": "^1.1.1"
+  }
+}
