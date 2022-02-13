@@ -223,7 +223,7 @@ async function makeGetRequest(text) {
     return new Promise(function (resolve, reject) {
         plagiarism(text, {
             "text.ru": {
-                "userkey": "45bdbc1701f1dd06a13279a9401e5572"
+                "userkey": "3cf67de361b6b095250748ad250e2845"
             }
         }).then(
             (response) => {
